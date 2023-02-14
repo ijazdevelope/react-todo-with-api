@@ -1,5 +1,6 @@
 @import '../variables';
-@import '~bootstrap/scss/bootstrap-utilities';
+@import '../functions/rem';
+// @import '~bootstrap/scss/bootstrap-utilities';
 
 $ns: c-wrapper;
 
@@ -63,7 +64,7 @@ $ns: c-wrapper;
             box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px $white;
 
             &__user {
-                padding-right: 0.5rem;
+                padding-right: rem(8px);
             }
 
             &__input {
