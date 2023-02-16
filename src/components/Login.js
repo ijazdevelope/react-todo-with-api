@@ -3,8 +3,24 @@ import '../scss/components/_login.scss';
 import myImg from '../static/images/ijaz.jpeg';
 import Button from './Button';
 import Input from './Input';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+const schema = yup.object({
+    userName: yup.string().required(),
+    password: yup.string().required(),
+    // age: yup.number().positive().integer().required(),
+}).required();
 
 const Login = () => {
+
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(schema)
+    });
+
+    const onSubmit = data => console.log(data, errors, 'custom data');
+
     return (
         <div className='container'>
             <div className="wrapper c-wrapper">
@@ -20,15 +36,44 @@ const Login = () => {
                         <div className="c-wrapper__name">
                             login form
                         </div>
-                        <form className="c-wrapper__form">
+                        <form className="c-wrapper__form" onSubmit={handleSubmit(onSubmit)}>
                             <div className="c-wrapper__form__field">
                                 <span className="fa fa-user c-wrapper__form__field__user"></span>
-                                <Input className='c-wrapper__form__field__input' type="text" autoComplete="off" name="userName" id="userName" placeholder="Username" />
+                                <Input
+                                    className='c-wrapper__form__field__input'
+                                    type="text"
+                                    autoComplete="off"
+                                    name="userName"
+                                    id="userName"
+                                    placeholder="Username"
+                                    {...register("userName")}
+                                />
                             </div>
+                            <p className='c-wrapper__form__error'>{errors.userName?.message}</p>
                             <div className="c-wrapper__form__field">
                                 <span className="fa fa-key c-wrapper__form__field__user"></span>
-                                <Input className='c-wrapper__form__field__input' type="password" autoComplete="off" name="password" id="pwd" placeholder="Password" />
+                                <Input
+                                    className='c-wrapper__form__field__input'
+                                    type="password"
+                                    autoComplete="off"
+                                    name="password"
+                                    id="pwd"
+                                    placeholder="Password"
+                                    {...register("password", {
+                                        required: "required",
+                                        minLength: {
+                                            value: 5,
+                                            message: "min length is 5"
+                                        },
+                                        maxLength: {
+                                            required: true,
+                                            value: 10,
+                                            message: "Max length exceeded to 10"
+                                        }
+                                    })}
+                                />
                             </div>
+                            <p className='c-wrapper__form__error'>{errors.password?.message}</p>
                             <Button className="btn c-wrapper__form__button" value='Login'></Button>
                         </form>
                         <div className="text-center fs-6">

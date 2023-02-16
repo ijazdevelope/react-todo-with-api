@@ -98,6 +98,11 @@ $ns: c-wrapper;
                 background-color: #039BE5;
             }
         }
+
+        &__error {
+            color: $red;
+            padding-left: rem(16px);
+        }
     }
 
     &__forgot-password,
