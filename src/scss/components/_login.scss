@@ -1,6 +1,6 @@
 @import '../variables';
 @import '../functions/rem';
-// @import '~bootstrap/scss/bootstrap-utilities';
+@import '../../../node_modules/bootstrap/scss/bootstrap-utilities';
 
 $ns: c-wrapper;
 
@@ -65,6 +65,9 @@ $ns: c-wrapper;
 
             &__user {
                 padding-right: rem(8px);
+                width: rem(20px);
+                height: rem(20px);
+                padding-top: rem(3px);
             }
 
             &__input {

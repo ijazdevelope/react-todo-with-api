@@ -1,6 +1,8 @@
 import React from 'react';
-import '../scss/components/Login.css';
+import '../scss/components/_login.scss';
 import myImg from '../static/images/ijaz.jpeg';
+import Button from './Button';
+import Input from './Input';
 
 const Login = () => {
     return (
@@ -21,13 +23,13 @@ const Login = () => {
                         <form className="c-wrapper__form">
                             <div className="c-wrapper__form__field">
                                 <span className="fa fa-user c-wrapper__form__field__user"></span>
-                                <input className='c-wrapper__form__field__input' type="text" autoComplete="off" name="userName" id="userName" placeholder="Username" />
+                                <Input className='c-wrapper__form__field__input' type="text" autoComplete="off" name="userName" id="userName" placeholder="Username" />
                             </div>
                             <div className="c-wrapper__form__field">
                                 <span className="fa fa-key c-wrapper__form__field__user"></span>
-                                <input className='c-wrapper__form__field__input' type="password" autoComplete="off" name="password" id="pwd" placeholder="Password" />
+                                <Input className='c-wrapper__form__field__input' type="password" autoComplete="off" name="password" id="pwd" placeholder="Password" />
                             </div>
-                            <button className="btn c-wrapper__form__button">Login</button>
+                            <Button className="btn c-wrapper__form__button" value='Login'></Button>
                         </form>
                         <div className="text-center fs-6">
                             <a className='c-wrapper__forgot-password' href="#">Forget password?</a> or <a className='c-wrapper__signup' href="#">Sign up</a>
@@ -39,4 +41,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Login;
