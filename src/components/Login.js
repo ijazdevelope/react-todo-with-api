@@ -8,18 +8,19 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 const schema = yup.object({
-    userName: yup.string().required(),
-    password: yup.string().required(),
-    // age: yup.number().positive().integer().required(),
+    email: yup.string().required('Email is required').matches(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, 'Invalid email format'),
+    password: yup.string().required()
+        .min(4, 'Password length should be at least 4 characters')
+        .matches(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/, 'Password must contain at least 8 characters, one uppercase, one number and one special case character'),
 }).required();
 
 const Login = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { handleSubmit, register, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = data => console.log(data, errors, 'custom data');
+    const onSubmit = (data) => console.log(data);
 
     return (
         <div className='container'>
@@ -40,37 +41,26 @@ const Login = () => {
                             <div className="c-wrapper__form__field">
                                 <span className="fa fa-user c-wrapper__form__field__user"></span>
                                 <Input
-                                    className='c-wrapper__form__field__input'
-                                    type="text"
+                                    type="email"
                                     autoComplete="off"
-                                    name="userName"
-                                    id="userName"
-                                    placeholder="Username"
-                                    {...register("userName")}
+                                    name="email"
+                                    id="email"
+                                    placeholder="Email"
+                                    register={register}
+                                    errorMsg={errors?.email?.message}
                                 />
                             </div>
-                            <p className='c-wrapper__form__error'>{errors.userName?.message}</p>
+                            <p className='c-wrapper__form__error'>{errors.email?.message}</p>
                             <div className="c-wrapper__form__field">
                                 <span className="fa fa-key c-wrapper__form__field__user"></span>
                                 <Input
-                                    className='c-wrapper__form__field__input'
                                     type="password"
                                     autoComplete="off"
                                     name="password"
-                                    id="pwd"
+                                    id="password"
                                     placeholder="Password"
-                                    {...register("password", {
-                                        required: "required",
-                                        minLength: {
-                                            value: 5,
-                                            message: "min length is 5"
-                                        },
-                                        maxLength: {
-                                            required: true,
-                                            value: 10,
-                                            message: "Max length exceeded to 10"
-                                        }
-                                    })}
+                                    register={register}
+                                    errorMsg={errors?.password?.message}
                                 />
                             </div>
                             <p className='c-wrapper__form__error'>{errors.password?.message}</p>
