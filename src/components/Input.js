@@ -13,7 +13,7 @@ const Input = ({ placeholder, type, name, id, className, autoComplete, errorMsg,
                 {...(register && register(name))}
             />
             {errorMsg && (
-                <i className="bi bi-x-lg position-absolute top-4 right-5 text-danger"></i>
+                <i class="fa fa-times position-absolute text-danger c-wrapper__form__field__error" aria-hidden="true"></i>
             )}
         </>
     )

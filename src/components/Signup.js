@@ -17,16 +17,20 @@ const schema = yup.object({
     .min(4, 'Password length should be at least 4 characters')
     .max(8, 'Password length should be at least 8 characters')
     .matches(/[0-9]/, 'Password must contain at least one number')
+    .oneOf([yup.ref("password")], "Passwords do not match")
 }).required();
 
-const Signup = () => {
+const Signup = ({ isVisible, setVisible }) => {
+
   const signupImg = 'https://images.unsplash.com/photo-1674773751169-eebaf7d3e9f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM3fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
 
   const { handleSubmit, register, formState: { errors } } = useForm({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(schema),
   });
 
   const onSubmit = (data) => console.log(errors);
+
+  const handlerShowPassword = () => setVisible(!isVisible);
 
   return (
     <div className='container'>
@@ -45,7 +49,7 @@ const Signup = () => {
             </div>
             <form className="c-wrapper__form" onSubmit={handleSubmit(onSubmit)}>
               <div className="c-wrapper__form__field">
-                <span className="fa fa-user c-wrapper__form__field__user"></span>
+                <span className="fa fa-envelope-o c-wrapper__form__field__user"></span>
                 <Input
                   type="email"
                   autoComplete="off"
@@ -58,9 +62,9 @@ const Signup = () => {
               </div>
               <p className='c-wrapper__form__error'>{errors.email?.message}</p>
               <div className="c-wrapper__form__field">
-                <span className="fa fa-eye c-wrapper__form__field__user"></span>
+                <span onClick={handlerShowPassword} className={`fa ${isVisible ? 'fa-eye' : 'fa-eye-slash'} c-wrapper__form__field__user`}></span>
                 <Input
-                  type="password"
+                  type={!isVisible ? "password" : "text"}
                   autoComplete="off"
                   name="password"
                   id="password"
@@ -71,9 +75,9 @@ const Signup = () => {
               </div>
               <p className='c-wrapper__form__error'>{errors.password?.message}</p>
               <div className="c-wrapper__form__field">
-                <span className="fa fa-eye c-wrapper__form__field__user"></span>
+                <span onClick={handlerShowPassword} className={`fa ${isVisible ? 'fa-eye' : 'fa-eye-slash'} c-wrapper__form__field__user`}></span>
                 <Input
-                  type="text"
+                  type={!isVisible ? "password" : "text"}
                   autoComplete="off"
                   name="cpassword"
                   id="cpassword"

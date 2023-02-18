@@ -27,12 +27,22 @@ $ns: c-wrapper;
         color: $black;
         letter-spacing: 1.3px;
         font-family: $sofia-fonts;
-        font-weight: 600;
+        font-weight: normal;
         font-size: 1.4rem;
         padding-left: 10px;
         margin-top: 1.4rem;
         text-align: center;
         text-transform: uppercase;
+
+        &__title,
+        &__text {
+            text-transform: capitalize;
+        }
+
+        &__text {
+            font-size: 1rem;
+            font-family: sans-serif;
+        }
     }
 
     &__logo {
@@ -62,6 +72,7 @@ $ns: c-wrapper;
             margin-bottom: 20px;
             border-radius: 20px;
             box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px $white;
+            position: relative;
 
             &__user {
                 padding-right: rem(8px);
@@ -80,6 +91,10 @@ $ns: c-wrapper;
                 font-size: 1.2rem;
                 color: #666;
                 padding: 10px 15px 10px 10px;
+            }
+
+            &__error {
+                right: 13px;
             }
         }
 
@@ -116,6 +131,10 @@ $ns: c-wrapper;
             color: #039BE5;
         }
     }
+
+    &__or {
+        padding: 0 5px;
+    }
 }
 
 
@@ -124,6 +143,11 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px $white;
+}
+
+.fa-eye,
+.fa-eye-slash {
+    cursor: pointer;
 }
 
 @media(max-width: 380px) {
