@@ -7,17 +7,14 @@ import {
 } from "react-router-dom";
 import ForgetPassword from './components/ForgetPassword';
 import ResetPassword from './components/ResetPassword';
-import { useState } from 'react';
 
 const App = () => {
-  const [isVisible, setVisible] = useState(false);
-
   return (
     <Routes>
-      <Route path="/" element={<Login isVisible={isVisible} setVisible={setVisible} />} />
-      <Route path="/signup" element={<Signup isVisible={isVisible} setVisible={setVisible} />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/forget-password" element={<ForgetPassword />} />
-      <Route path="/reset-password" element={<ResetPassword isVisible={isVisible} setVisible={setVisible} />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
     </Routes>
   );
 }

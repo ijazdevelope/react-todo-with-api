@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../scss/components/_login.scss';
 import myImg from '../static/images/ijaz.jpeg';
 import Button from './Button';
@@ -15,8 +15,9 @@ const schema = yup.object({
         .matches(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/, 'Password must contain at least 8 characters, one uppercase, one number and one special case character'),
 }).required();
 
-const Login = ({ isVisible, setVisible }) => {
-    console.log(isVisible)
+const Login = () => {
+
+  const [isVisible, setVisible] = useState(false);
 
     const { handleSubmit, register, formState: { errors } } = useForm({
         resolver: yupResolver(schema)

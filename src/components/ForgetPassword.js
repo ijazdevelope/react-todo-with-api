@@ -6,7 +6,6 @@ import myImg from '../static/images/ijaz.jpeg';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { Link } from "react-router-dom";
 
 const schema = yup.object({
     email: yup.string().required('Email is required').matches(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, 'Invalid email format'),

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from './Input';
 import Button from './Button';
 import myImg from '../static/images/ijaz.jpeg';
@@ -18,7 +18,8 @@ const schema = yup.object({
         .oneOf([yup.ref("password")], "Passwords do not match")
 }).required();
 
-const ResetPassword = ({ isVisible, setVisible }) => {
+const ResetPassword = () => {
+  const [isVisible, setVisible] = useState(false);
 
     const { handleSubmit, register, formState: { errors } } = useForm({
         resolver: yupResolver(schema)

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import myImg from '../static/images/ijaz.jpeg';
 import Input from './Input';
 import '../scss/components/_login.scss';
@@ -20,7 +20,8 @@ const schema = yup.object({
     .oneOf([yup.ref("password")], "Passwords do not match")
 }).required();
 
-const Signup = ({ isVisible, setVisible }) => {
+const Signup = () => {
+  const [isVisible, setVisible] = useState(false);
 
   const signupImg = 'https://images.unsplash.com/photo-1674773751169-eebaf7d3e9f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM3fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
 
