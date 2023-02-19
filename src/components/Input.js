@@ -4,7 +4,7 @@ const Input = ({ placeholder, type, name, id, className, autoComplete, errorMsg,
     return (
         <>
             <input
-                className={`c-wrapper__form__field__input ${className && className} ${errorMsg && 'border-danger border'}`}
+                className={`c-wrapper__form__field__input ${className && className}`}
                 type={type}
                 placeholder={placeholder}
                 name={name}
