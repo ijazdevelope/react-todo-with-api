@@ -4,16 +4,9 @@ import myImg from '../../../static/images/ijaz.jpeg';
 import Input from '../../../components/Input';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
 import { Link } from "react-router-dom";
 import Spinner from '../../../components/Spinner';
-
-const schema = yup.object({
-    email: yup.string().required('Email is required').matches(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, 'Invalid email format'),
-    password: yup.string().required()
-        .min(4, 'Password length should be at least 4 characters')
-        .matches(/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/, 'Password must contain at least 8 characters, one uppercase, one number and one special case character'),
-}).required();
+import { LoginSchema } from '../schema-validation/SchemaValidation';
 
 const Login = () => {
 
@@ -21,7 +14,7 @@ const Login = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const { handleSubmit, register, setValue, formState: { errors } } = useForm({
-        resolver: yupResolver(schema)
+        resolver: yupResolver(LoginSchema)
     });
 
     const onSubmit = (data) => {
