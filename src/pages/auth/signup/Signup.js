@@ -28,8 +28,6 @@ const schema = yup.object({
 const Signup = () => {
   const [isVisible, setVisible] = useState(false);
 
-  const signupImg = 'https://images.unsplash.com/photo-1674773751169-eebaf7d3e9f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM3fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
-
   const { handleSubmit, register, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
@@ -43,7 +41,7 @@ const Signup = () => {
       <div className="wrapper c-wrapper">
         <div className="row g-0">
           <div className="col-12 col-lg-6 d-none d-md-block">
-            <img src={signupImg}
+            <img src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp'
               alt="signup form" className="img-fluid c-wrapper__img" />
           </div>
           <div className="col-12 col-lg-6 c-wrapper__columns">

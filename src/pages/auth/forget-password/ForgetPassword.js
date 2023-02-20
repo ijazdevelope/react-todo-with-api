@@ -27,7 +27,7 @@ const ForgetPassword = () => {
             <div className="wrapper c-wrapper">
                 <div className="row g-0">
                     <div className="col-md-5 col-lg-6 d-none d-md-block">
-                        <img src="https://images.unsplash.com/photo-1676302529641-a13f926bcc8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI3fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
                             alt="login form" className="img-fluid c-wrapper__img" />
                     </div>
                     <div className="col-md-5 col-lg-6 c-wrapper__columns">
