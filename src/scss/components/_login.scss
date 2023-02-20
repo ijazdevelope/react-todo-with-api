@@ -118,6 +118,17 @@ $ns: c-wrapper;
             color: $red;
             padding-left: rem(16px);
         }
+
+        &__account {
+            margin-top: 1rem;
+            text-align: right;
+
+            &__link {
+                font-weight: 500;
+                text-decoration: none;
+                color: #333;
+            }
+        }
     }
 
     &__forgot-password,
@@ -129,6 +140,10 @@ $ns: c-wrapper;
         &:hover {
             color: #039BE5;
         }
+    }
+
+    &__forgot-password {
+        text-decoration: underline;
     }
 
     &__or {
