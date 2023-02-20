@@ -1,7 +1,7 @@
 import React from 'react';
-import Input from './Input';
-import Button from './Button';
-import myImg from '../static/images/ijaz.jpeg';
+import Input from '../../../components/Input';
+import Button from '../../../components/Button';
+import myImg from '../../../static/images/ijaz.jpeg';
 import { Link } from 'react-router-dom';
 
 import { useForm } from "react-hook-form";

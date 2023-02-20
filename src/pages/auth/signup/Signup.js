@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import myImg from '../static/images/ijaz.jpeg';
-import Input from './Input';
-import '../scss/components/_login.scss';
-import Button from './Button';
+import myImg from '../../../static/images/ijaz.jpeg';
+import Input from '../../../components/Input';
+import '../../../scss/components/_login.scss';
+import Button from '../../../components/Button';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";

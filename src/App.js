@@ -1,12 +1,12 @@
 import './scss/global.css';
-import Login from './components/Login';
-import Signup from './components/Signup';
+import Signup from './pages/auth/signup/Signup';
+import Login from './pages/auth/login/Login';
 import {
   Route,
   Routes
 } from "react-router-dom";
-import ForgetPassword from './components/ForgetPassword';
-import ResetPassword from './components/ResetPassword';
+import ForgetPassword from './pages/auth/forget-password/ForgetPassword';
+import ResetPassword from './pages/auth/reset-password/ResetPassword';
 
 const App = () => {
   return (
