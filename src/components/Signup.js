@@ -131,10 +131,8 @@ const Signup = () => {
                   <p className='c-wrapper__form__error'>{errors.cpassword?.message}</p>
                 </div>
               </div>
-              <Button className="btn c-wrapper__form__button" value='signup'></Button>
-              <Link to='/'>
-                <Button className="btn c-wrapper__form__button" value='login'></Button>
-              </Link>
+              <Button className="btn c-wrapper__form__button" value='sign up'></Button>
+                <p className='c-wrapper__form__account'>Already have an account? <Link to='/' className='c-wrapper__form__account__link'>Login</Link></p>
             </form>
           </div>
         </div>
