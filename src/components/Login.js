@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { Link } from "react-router-dom";
+import Spinner from './Spinner';
 
 const schema = yup.object({
     email: yup.string().required('Email is required').matches(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, 'Invalid email format'),
@@ -18,12 +19,15 @@ const schema = yup.object({
 const Login = () => {
 
     const [isVisible, setVisible] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const { handleSubmit, register, setValue, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+        setIsLoading(true)
+    };
 
     const handlerShowPassword = () => setVisible(!isVisible);
 
@@ -71,7 +75,21 @@ const Login = () => {
                                 />
                             </div>
                             <p className='c-wrapper__form__error'>{errors.password?.message}</p>
-                            <Button className="btn c-wrapper__form__button" value='Login'></Button>
+                            <button className="btn c-wrapper__form__button">
+                                {isLoading ?
+                                    <Spinner
+                                        visible={isLoading}
+                                        height="50"
+                                        width="50"
+                                        ariaLabel="blocks-loading"
+                                        wrapperStyle={{width: '10rem'}}
+                                        wrapperClass="dna-wrapper"
+                                        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                                        size='xl'
+                                    />
+                                    : 'login'
+                                }
+                            </button>
                             <div className="fs-6 text-end mt-3">
                                 <Link className='c-wrapper__forgot-password' to="/forget-password">Forget password?</Link>
                                 <span className='c-wrapper__or'>or</span>
