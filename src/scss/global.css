@@ -4285,13 +4285,16 @@
   }
 }
 .c-wrapper .c-wrapper__form .btn {
-  border-radius: 24px;
-  background-color: #03A9F4;
+  align-items: center;
   border: none;
+  background-color: #03A9F4;
+  border-radius: 24px;
   color: #fff;
+  display: flex;
   font-weight: 500;
   font-size: 15px;
   font-family: "SofiaPro", sans-serif;
+  justify-content: center;
   letter-spacing: 1.2px;
   line-height: 1.13;
   padding: 12px 32px;
@@ -4299,9 +4302,9 @@
   text-align: center;
 }
 .c-wrapper .c-wrapper__form .btn:hover {
+  color: #000;
+  background-color: #e8f0fe;
   text-decoration: none;
-  background-color: #fff;
-  color: #03A9F4;
 }
 .c-wrapper .c-wrapper__form .btn:not(:disabled):not(.disabled):active {
   color: #03A9F4;
