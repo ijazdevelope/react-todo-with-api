@@ -2,6 +2,7 @@ import React from 'react';
 import Input from './Input';
 import Button from './Button';
 import myImg from '../static/images/ijaz.jpeg';
+import { Link } from 'react-router-dom';
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -52,6 +53,7 @@ const ForgetPassword = () => {
                             </div>
                             <p className='c-wrapper__form__error'>{errors.email?.message}</p>
                             <Button className="btn c-wrapper__form__button" value='Submit'></Button>
+                            <p className='c-wrapper__form__account'>Remember pasword? <Link to='/' className='c-wrapper__form__account__link'>Login</Link></p>
                         </form>
                     </div>
                 </div>
