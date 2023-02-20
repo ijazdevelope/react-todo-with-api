@@ -94,6 +94,7 @@ $ns: c-wrapper;
 
             &__error {
                 right: 13px;
+                cursor: pointer;
             }
         }
 
@@ -135,7 +136,8 @@ $ns: c-wrapper;
     &__signup {
         text-decoration: none;
         font-size: 1rem;
-        color: #03A9F4;
+        color: #333;
+        font-weight: 500;
 
         &:hover {
             color: #039BE5;
