@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
+const Input = ({ placeholder, type, name, id, className, autoComplete, errorMsg, register, setValue }) => {
 
-const Input = ({ placeholder, type, name, id, className, autoComplete, errorMsg, register }) => {
     return (
         <>
             <input
@@ -13,7 +13,7 @@ const Input = ({ placeholder, type, name, id, className, autoComplete, errorMsg,
                 {...(register && register(name))}
             />
             {errorMsg && (
-                <i class="fa fa-times position-absolute text-danger c-wrapper__form__field__error" aria-hidden="true"></i>
+                <i onClick={ () => setValue(name, '')} className="fa fa-times position-absolute text-danger c-wrapper__form__field__error" aria-hidden="true"></i>
             )}
         </>
     )

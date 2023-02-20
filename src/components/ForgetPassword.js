@@ -17,7 +17,7 @@ const schema = yup.object({
 
 const ForgetPassword = () => {
 
-    const { handleSubmit, register, formState: { errors } } = useForm({
+    const { handleSubmit, register, setValue, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
     const onSubmit = (data) => console.log(data);
@@ -49,6 +49,7 @@ const ForgetPassword = () => {
                                     placeholder="Email address"
                                     register={register}
                                     errorMsg={errors?.email?.message}
+                                    setValue={setValue}
                                 />
                             </div>
                             <p className='c-wrapper__form__error'>{errors.email?.message}</p>

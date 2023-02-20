@@ -30,7 +30,7 @@ const Signup = () => {
 
   const signupImg = 'https://images.unsplash.com/photo-1674773751169-eebaf7d3e9f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM3fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60';
 
-  const { handleSubmit, register, formState: { errors } } = useForm({
+  const { handleSubmit, register, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
 
@@ -66,6 +66,7 @@ const Signup = () => {
                       placeholder="First name"
                       register={register}
                       errorMsg={errors?.fname?.message}
+                      setValue={setValue}
                     />
                   </div>
                   <p className='c-wrapper__form__error'>{errors.fname?.message}</p>
@@ -81,6 +82,7 @@ const Signup = () => {
                       placeholder="Last name"
                       register={register}
                       errorMsg={errors?.lname?.message}
+                      setValue={setValue}
                     />
                   </div>
                   <p className='c-wrapper__form__error'>{errors.lname?.message}</p>
@@ -96,6 +98,7 @@ const Signup = () => {
                   placeholder="Email"
                   register={register}
                   errorMsg={errors?.email?.message}
+                  setValue={setValue}
                 />
               </div>
               <p className='c-wrapper__form__error'>{errors.email?.message}</p>
@@ -111,6 +114,7 @@ const Signup = () => {
                       placeholder="Password"
                       register={register}
                       errorMsg={errors?.password?.message}
+                      setValue={setValue}
                     />
                   </div>
                   <p className='c-wrapper__form__error'>{errors.password?.message}</p>
@@ -126,6 +130,7 @@ const Signup = () => {
                       placeholder="Confirm password"
                       register={register}
                       errorMsg={errors?.cpassword?.message}
+                      setValue={setValue}
                     />
                   </div>
                   <p className='c-wrapper__form__error'>{errors.cpassword?.message}</p>

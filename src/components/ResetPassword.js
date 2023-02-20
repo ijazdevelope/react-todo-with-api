@@ -21,7 +21,7 @@ const schema = yup.object({
 const ResetPassword = () => {
   const [isVisible, setVisible] = useState(false);
 
-    const { handleSubmit, register, formState: { errors } } = useForm({
+    const { handleSubmit, register, setValue, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
     const onSubmit = (data) => console.log(data);
@@ -54,6 +54,7 @@ const ResetPassword = () => {
                                     placeholder="Password"
                                     register={register}
                                     errorMsg={errors?.password?.message}
+                                    setValue={setValue}
                                 />
                             </div>
                             <p className='c-wrapper__form__error'>{errors.password?.message}</p>
@@ -67,6 +68,7 @@ const ResetPassword = () => {
                                     placeholder="Confirm password"
                                     register={register}
                                     errorMsg={errors?.cpassword?.message}
+                                    setValue={setValue}
                                 />
                             </div>
                             <p className='c-wrapper__form__error'>{errors.cpassword?.message}</p>

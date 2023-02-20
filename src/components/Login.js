@@ -17,9 +17,9 @@ const schema = yup.object({
 
 const Login = () => {
 
-  const [isVisible, setVisible] = useState(false);
+    const [isVisible, setVisible] = useState(false);
 
-    const { handleSubmit, register, formState: { errors } } = useForm({
+    const { handleSubmit, register, setValue, formState: { errors } } = useForm({
         resolver: yupResolver(schema)
     });
 
@@ -53,6 +53,7 @@ const Login = () => {
                                     placeholder="Email"
                                     register={register}
                                     errorMsg={errors?.email?.message}
+                                    setValue={setValue}
                                 />
                             </div>
                             <p className='c-wrapper__form__error'>{errors.email?.message}</p>
@@ -66,16 +67,17 @@ const Login = () => {
                                     placeholder="Password"
                                     register={register}
                                     errorMsg={errors?.password?.message}
+                                    setValue={setValue}
                                 />
                             </div>
                             <p className='c-wrapper__form__error'>{errors.password?.message}</p>
                             <Button className="btn c-wrapper__form__button" value='Login'></Button>
+                            <div className="fs-6 text-end mt-3">
+                                <Link className='c-wrapper__forgot-password' to="/forget-password">Forget password?</Link>
+                                <span className='c-wrapper__or'>or</span>
+                                <Link className='c-wrapper__signup' to="/signup">Sign up</Link>
+                            </div>
                         </form>
-                        <div className="text-center fs-6">
-                            <Link className='c-wrapper__forgot-password' to="/forget-password">Forget password?</Link>
-                            <span className='c-wrapper__or'>or</span>
-                            <Link className='c-wrapper__signup' to="/signup">Sign up</Link>
-                        </div>
                     </div>
                 </div>
             </div>
