@@ -1,0 +1,86 @@
+@import '../../../scss/variables';
+@import '../../functions/rem';
+
+$ns: c-todo;
+
+.#{$ns} {
+    background: url('../../../static/images/laptop.jpg') no-repeat center;
+    background-size: cover;
+    color: $white;
+    min-height: 100vh;
+
+    &__header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: rem(10px);
+        text-transform: capitalize;
+    }
+
+    &__icon {
+        margin: 0;
+    }
+
+    &__img {
+        width: rem(40px);
+    }
+
+    &__logout {
+        cursor: pointer;
+        color: $white;
+        font-weight: 500;
+        font-size: 1rem;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    &__title {
+        font-family: $sofia-fonts;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 3px;
+        padding: rem(10px) 0;
+    }
+
+    &__todo-img {
+        width: rem(35px);
+    }
+
+    &__form {
+        background-color: #ecf0f3;
+        padding: rem(16px);
+    }
+
+    &__input-group {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+        position: relative;
+    }
+
+    .#{$ns} {
+        &__input {
+            display: block;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            background: none;
+            font-size: 1.2rem;
+            color: #666;
+            padding: 10px 15px 10px 10px;
+            box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+        }
+    }
+
+    &__name {
+        color: $black;
+        font-family: $sequal-font-900;
+        text-transform: capitalize;
+    }
+
+    .fa {
+        cursor: pointer;
+    }
+
+}
