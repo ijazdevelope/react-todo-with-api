@@ -1,54 +1,3 @@
-@import '~bootstrap/scss/bootstrap-utilities';
-
-@mixin btn {
-    align-items: center;
-    border: none;
-    background-color: $primary;
-    border-radius: 24px;
-    color: $white;
-    display: flex;
-    font-weight: 500;
-    font-size: 15px;
-    font-family: $sofia-fonts;
-    justify-content: center;
-    letter-spacing: 1.2px;
-    line-height: 1.13;
-    padding: 12px 32px;
-    text-transform: uppercase;
-    text-align: center;
-
-    &:hover {
-        color: $black;
-        background-color: $primary1;
-        text-decoration: none;
-    }
-
-    &:not(:disabled) {
-        &:not(.disabled) {
-            &:active {
-                color: $primary;
-                background-color: transparent;
-            }
-        }
-    }
-
-    &:not(:disabled) {
-        &:not(.disabled) {
-            &:active {
-                &:focus {
-                    color: $primary;
-                    box-shadow: unset;
-                }
-            }
-        }
-    }
-
-    @include media-breakpoint-down(sm) {
-        max-width: 100%;
-        width: 100%;
-    }
-}
-
 .c-wrapper, .c-todo {
     .btn {
         @include btn();
@@ -60,12 +9,9 @@
             &:hover {
                 background-color: $white;
                 color: $vital-green;
+                transform: scale($scale1-1);
+                transition: all $speed-500 ease-in-out;
             }
-
-            // @include media-breakpoint-down(sm) {
-            //     background: $white;
-            //     color: $primary;
-            // }
         }
 
         &--secondary {
@@ -74,14 +20,17 @@
             &:hover {
                 background-color: $white;
                 color: $secondary-btn-bg;
+                transform: scale($scale1-1);
+                transition: all $speed-500 ease-in-out;
+            }
+        }
+
+        &--primary {
+            &:hover {
+                transform: scale($scale1-1);
+                transition: all $speed-500 ease-in-out;
             }
         }
     }
 
 }
-
-// .c-carousel {
-//     .btn-secondary {
-
-//     }
-// }
