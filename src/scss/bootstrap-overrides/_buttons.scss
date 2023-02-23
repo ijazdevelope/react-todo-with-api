@@ -49,19 +49,33 @@
     }
 }
 
-.c-wrapper .c-wrapper__form {
+.c-wrapper, .c-todo {
     .btn {
         @include btn();
 
-        // &-primary {
-        //     background: $primary;
-        //     color: $white;
+        &--success {
+            background: $vital-green;
+            color: $white;
 
-        //     @include media-breakpoint-down(sm) {
-        //         background: $white;
-        //         color: $primary;
-        //     }
-        // }
+            &:hover {
+                background-color: $white;
+                color: $vital-green;
+            }
+
+            // @include media-breakpoint-down(sm) {
+            //     background: $white;
+            //     color: $primary;
+            // }
+        }
+
+        &--secondary {
+            background-color: $secondary-btn-bg;
+
+            &:hover {
+                background-color: $white;
+                color: $secondary-btn-bg;
+            }
+        }
     }
 
 }
