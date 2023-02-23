@@ -10,7 +10,7 @@ $ns: c-wrapper;
     padding: 40px 30px 30px 30px;
     background-color: $bright-gray;
     border-radius: 15px;
-    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px $white;
+    box-shadow: $button-shadow;
 
     &__columns {
         background-color: $white;
