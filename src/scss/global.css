@@ -4284,7 +4284,7 @@
     display: none !important;
   }
 }
-.c-wrapper .c-wrapper__form .btn {
+.c-wrapper .btn, .c-todo .btn {
   align-items: center;
   border: none;
   background-color: #03A9F4;
@@ -4301,22 +4301,97 @@
   text-transform: uppercase;
   text-align: center;
 }
-.c-wrapper .c-wrapper__form .btn:hover {
+.c-wrapper .btn:hover, .c-todo .btn:hover {
   color: #000;
   background-color: #e8f0fe;
   text-decoration: none;
 }
-.c-wrapper .c-wrapper__form .btn:not(:disabled):not(.disabled):active {
+.c-wrapper .btn:not(:disabled):not(.disabled):active, .c-todo .btn:not(:disabled):not(.disabled):active {
   color: #03A9F4;
   background-color: transparent;
 }
-.c-wrapper .c-wrapper__form .btn:not(:disabled):not(.disabled):active:focus {
+.c-wrapper .btn:not(:disabled):not(.disabled):active:focus, .c-todo .btn:not(:disabled):not(.disabled):active:focus {
   color: #03A9F4;
   box-shadow: unset;
 }
 @media (max-width: 575.98px) {
-  .c-wrapper .c-wrapper__form .btn {
+  .c-wrapper .btn, .c-todo .btn {
     max-width: 100%;
     width: 100%;
   }
+}
+.c-wrapper .btn--success, .c-todo .btn--success {
+  background: #198754;
+  color: #fff;
+}
+.c-wrapper .btn--success:hover, .c-todo .btn--success:hover {
+  background-color: #fff;
+  color: #198754;
+}
+.c-wrapper .btn--secondary, .c-todo .btn--secondary {
+  background-color: #6c757d;
+}
+.c-wrapper .btn--secondary:hover, .c-todo .btn--secondary:hover {
+  background-color: #fff;
+  color: #6c757d;
+}
+
+.c-todo {
+  background: url("../../../static/images/laptop.jpg") no-repeat center;
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+}
+.c-todo__header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625rem;
+  text-transform: capitalize;
+}
+.c-todo__icon {
+  margin: 0;
+}
+.c-todo__img {
+  width: 2.5rem;
+}
+.c-todo__logout {
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0;
+  text-decoration: none;
+}
+.c-todo__title {
+  font-family: "SofiaPro", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  padding: 0.625rem 0;
+}
+.c-todo__todo-img {
+  width: 2.1875rem;
+}
+.c-todo__form {
+  background-color: #ecf0f3;
+  padding: 1rem;
+}
+.c-todo__input-group {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+  position: relative;
+}
+.c-todo .c-todo__input {
+  display: block;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background: none;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 10px 15px 10px 10px;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
 }/*# sourceMappingURL=global.css.map */
