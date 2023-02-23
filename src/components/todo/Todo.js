@@ -34,7 +34,7 @@ const Todo = () => {
               </form>
               <div className='row my-3 justify-content-center'>
                 <Button className='btn col-3 btn--success' value='all' type='button'></Button>
-                <Button className='btn col-3 mx-3 my-3 my-md-0' value='done' type='button'></Button>
+                <Button className='btn col-3 mx-3 my-3 my-md-0 btn--primary' value='done' type='button'></Button>
                 <Button className='btn col-3 btn--secondary' value='todo' type='button'></Button>
               </div>
               <form className='c-todo__form'>
