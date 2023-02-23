@@ -1,4 +1,3 @@
-// import './scss/global.scss';
 import Signup from './pages/auth/signup/Signup';
 import Login from './pages/auth/login/Login';
 import {
