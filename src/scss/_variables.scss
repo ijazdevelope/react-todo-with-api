@@ -18,3 +18,12 @@ $font-size-base-px: 16px;
 $primary1: #e8f0fe;
 $vital-green: #198754;
 $secondary-btn-bg: #6c757d;
+$button-shadow: 13px 13px 20px #cbced1, -13px -13px 20px $white;
+
+// add transitions
+$speed1-s: 1s;
+$speed-500: 500ms;
+$speed-800: 800;
+
+// button on hover scale effect
+$scale1-1: 1.1;
