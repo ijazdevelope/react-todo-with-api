@@ -1,4 +1,4 @@
-import './scss/global.css';
+// import './scss/global.scss';
 import Signup from './pages/auth/signup/Signup';
 import Login from './pages/auth/login/Login';
 import {
@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import ForgetPassword from './pages/auth/forget-password/ForgetPassword';
 import ResetPassword from './pages/auth/reset-password/ResetPassword';
+import Todo from './components/todo/Todo';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/signup" element={<Signup />} />
       <Route path="/forget-password" element={<ForgetPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/todo" element={<Todo />} />
     </Routes>
   );
 }
