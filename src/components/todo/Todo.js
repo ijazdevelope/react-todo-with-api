@@ -3,8 +3,18 @@ import { Link } from 'react-router-dom';
 import '../../scss/components/todo/todo.css';
 import TodoImg from '../../static/images/to-do-list.png';
 import Button from '../Button';
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import Input from '../Input';
+import { TodoSchema } from '../../pages/auth/schema-validation/SchemaValidation';
 
 const Todo = () => {
+
+  const { handleSubmit, register, setValue, formState: { errors } } = useForm({
+    resolver: yupResolver(TodoSchema),
+  });
+  const onSubmit = (data) => console.log(errors);
+
   return (
     <div className="c-todo">
       <div className='container'>
@@ -23,13 +33,23 @@ const Todo = () => {
           <div className="row">
             <div className="col-12 col-md-7 m-auto c-todo__add">
               <h2 className='c-todo__title'>todo title</h2>
-              <form className='c-todo__form'>
+              <form className='c-todo__form' onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-group mb-3 c-todo__input-group">
                   <span className="input-group-text" id="basic-addon1">
                     <img className='c-todo__todo-img' src={TodoImg} alt='todo-img' />
                   </span>
-                  <input type="text" className="form-control c-todo__input" placeholder="Enter Todo...." aria-label="Username" aria-describedby="basic-addon1" />
+                  <Input
+                    type="text"
+                    name='todo_name'
+                    className={`form-control c-todo__input ${errors.todo_name && 'border-danger border c-todo__input--error-border'} `}
+                    placeholder="Enter Todo...." aria-label="Username"
+                    aria-describedby="basic-addon1"
+                    register={register}
+                    errorMsg={errors?.todo_name?.message}
+                    setValue={setValue}
+                  />
                 </div>
+                <p className='c-wrapper__form__error'>{errors.todo_name?.message}</p>
                 <Button className='btn col-12' value='add todo' type='submit'></Button>
               </form>
               <div className='row my-3 justify-content-center'>
