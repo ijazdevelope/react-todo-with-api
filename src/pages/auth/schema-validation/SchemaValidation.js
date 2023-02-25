@@ -33,3 +33,7 @@ export const ForgetPasswordSchema = yup.object({
         .min(8, 'Password length should be at least 8 characters')
         .matches(passwordRegex, 'Password must contain at least 8 characters, one uppercase, one number and one special case character'),
 }).required();
+
+export const TodoSchema = yup.object({
+        todo_name: yup.string().required('Please enter todo')
+}).required();
