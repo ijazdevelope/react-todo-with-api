@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../scss/components/todo/todo.css';
 import TodoImg from '../../static/images/to-do-list.png';
@@ -7,8 +7,16 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import Input from '../Input';
 import { TodoSchema } from '../../pages/auth/schema-validation/SchemaValidation';
+import { Axios } from '../../config/Interceptor';
+
 
 const Todo = () => {
+
+  useEffect(() => {
+    Axios.get('https://jsonplaceholder.typicode.com/users')
+      .then(response => console.log(response))
+      .catch(err => console.log(err))
+  }, []);
 
   const { handleSubmit, register, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(TodoSchema),
