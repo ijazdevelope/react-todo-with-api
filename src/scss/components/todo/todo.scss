@@ -70,6 +70,11 @@ $ns: c-todo;
             color: #666;
             padding: 10px 15px 10px 10px;
             box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+
+            &--error-border {
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
         }
     }
 
