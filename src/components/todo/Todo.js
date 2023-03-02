@@ -8,9 +8,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Input from '../Input';
 import { TodoSchema } from '../../pages/auth/schema-validation/SchemaValidation';
 import { Axios } from '../../config/Interceptor';
+import { useDispatch, useSelector } from 'react-redux'
+import { Action } from '../../redux/actions/Actions';
 
 
 const Todo = () => {
+
+  const state = useSelector(state => state?.reducer?.state);
+  const dispatch = useDispatch();
+
+  console.log(state, 'redux state');
 
   useEffect(() => {
     Axios.get('https://jsonplaceholder.typicode.com/users')
@@ -40,7 +47,7 @@ const Todo = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-7 m-auto c-todo__add">
-              <h2 className='c-todo__title'>todo title</h2>
+              <h2 className='c-todo__title'>todo title {state} </h2>
               <form className='c-todo__form' onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-group mb-3 c-todo__input-group">
                   <span className="input-group-text" id="basic-addon1">
@@ -61,7 +68,7 @@ const Todo = () => {
                 <Button className='btn col-12' value='add todo' type='submit'></Button>
               </form>
               <div className='row my-3 justify-content-center'>
-                <Button className='btn col-3 btn--success' value='all' type='button'></Button>
+                <Button className='btn col-3 btn--success' value='all' type='button' onClick={ () => dispatch(Action())}></Button>
                 <Button className='btn col-3 mx-3 my-3 my-md-0 btn--primary' value='done' type='button'></Button>
                 <Button className='btn col-3 btn--secondary' value='todo' type='button'></Button>
               </div>
