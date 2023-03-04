@@ -1,6 +1,7 @@
 @import '../variables';
 @import '../functions/rem';
 @import '../../../node_modules/bootstrap/scss/bootstrap-utilities';
+@import '../mixins';
 
 $ns: c-wrapper;
 
@@ -73,12 +74,32 @@ $ns: c-wrapper;
             box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px $white;
             position: relative;
 
-            &__user {
-                padding-right: rem(8px);
-                width: rem(20px);
-                height: rem(20px);
-                padding-top: rem(3px);
+            &::before {
+                @include icon-mixin($envelope);
             }
+
+            &--eye {
+                &::before {
+                    @include icon-mixin($eye-icon);
+                }
+            }
+
+            &--user {
+                &::before {
+                    @include icon-mixin($user-icon);
+                }
+            }
+
+            // &::after {
+            //     @include icon-mixin($eye-icon);
+            // }
+
+            // &__user {
+            //     padding-right: rem(8px);
+            //     width: rem(20px);
+            //     height: rem(20px);
+            //     padding-top: rem(3px);
+            // }
 
             &__input {
                 width: 100%;

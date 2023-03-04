@@ -1,38 +1,3 @@
-@font-face {
-  font-family: "Sequel100Wide-45";
-  src: url("../static/fonts/Sequel100Black-45.woff2") format("woff2"), url("../static/fonts/Sequel100Black-45.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Sequel100Wide-65";
-  src: url("../static/fonts/Sequel100Wide-65.woff2") format("woff2"), url("../static/fonts/Sequel100Wide-65.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../static/fonts/Montserrat-Italic.woff2") format("woff2"), url("../static/fonts/Montserrat-Italic.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "SofiaPro";
-  src: url("../static/fonts/SofiaProBlack.woff2") format("woff2"), url("../static/fonts/SofiaProBlack.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "SofiaProBold";
-  src: url("../static/fonts/SofiaProBlack.woff2") format("woff2"), url("../static/fonts/SofiaProBlack.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 /*!
  * Bootstrap Utilities v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -44,7 +9,7 @@
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
-  --bs-red: #FF0000;
+  --bs-red: #dc3545;
   --bs-orange: #fd7e14;
   --bs-yellow: #ffc107;
   --bs-green: #198754;
@@ -63,20 +28,20 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #03A9F4;
+  --bs-primary: #0d6efd;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
-  --bs-danger: #FF0000;
+  --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 3, 169, 244;
+  --bs-primary-rgb: 13, 110, 253;
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
-  --bs-danger-rgb: 255, 0, 0;
+  --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
@@ -102,8 +67,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #03A9F4;
-  --bs-link-hover-color: #0287c3;
+  --bs-link-color: #0d6efd;
+  --bs-link-hover-color: #0a58ca;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -115,8 +80,8 @@
 }
 
 .text-bg-primary {
-  color: #000 !important;
-  background-color: RGBA(3, 169, 244, var(--bs-bg-opacity, 1)) !important;
+  color: #fff !important;
+  background-color: RGBA(13, 110, 253, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-secondary {
@@ -140,8 +105,8 @@
 }
 
 .text-bg-danger {
-  color: #000 !important;
-  background-color: RGBA(255, 0, 0, var(--bs-bg-opacity, 1)) !important;
+  color: #fff !important;
+  background-color: RGBA(220, 53, 69, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-light {
@@ -155,10 +120,10 @@
 }
 
 .link-primary {
-  color: #03A9F4 !important;
+  color: #0d6efd !important;
 }
 .link-primary:hover, .link-primary:focus {
-  color: #35baf6 !important;
+  color: #0a58ca !important;
 }
 
 .link-secondary {
@@ -190,10 +155,10 @@
 }
 
 .link-danger {
-  color: #FF0000 !important;
+  color: #dc3545 !important;
 }
 .link-danger:hover, .link-danger:focus {
-  color: #ff3333 !important;
+  color: #b02a37 !important;
 }
 
 .link-light {
@@ -4284,6 +4249,41 @@
     display: none !important;
   }
 }
+@font-face {
+  font-family: "Sequel100Wide-45";
+  src: url("../static/fonts/Sequel100Black-45.woff2") format("woff2"), url("../static/fonts/Sequel100Black-45.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sequel100Wide-65";
+  src: url("../static/fonts/Sequel100Wide-65.woff2") format("woff2"), url("../static/fonts/Sequel100Wide-65.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../static/fonts/Montserrat-Italic.woff2") format("woff2"), url("../static/fonts/Montserrat-Italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SofiaPro";
+  src: url("../static/fonts/SofiaProBlack.woff2") format("woff2"), url("../static/fonts/SofiaProBlack.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SofiaProBold";
+  src: url("../static/fonts/SofiaProBlack.woff2") format("woff2"), url("../static/fonts/SofiaProBlack.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 .c-wrapper .btn, .c-todo .btn {
   align-items: center;
   border: none;
@@ -4300,6 +4300,7 @@
   padding: 12px 32px;
   text-transform: uppercase;
   text-align: center;
+  transition: all 500ms;
 }
 .c-wrapper .btn:hover, .c-todo .btn:hover {
   color: #000;
@@ -4327,6 +4328,8 @@
 .c-wrapper .btn--success:hover, .c-todo .btn--success:hover {
   background-color: #fff;
   color: #198754;
+  transform: scale(1.1);
+  transition: all 500ms ease-in-out;
 }
 .c-wrapper .btn--secondary, .c-todo .btn--secondary {
   background-color: #6c757d;
@@ -4334,6 +4337,12 @@
 .c-wrapper .btn--secondary:hover, .c-todo .btn--secondary:hover {
   background-color: #fff;
   color: #6c757d;
+  transform: scale(1.1);
+  transition: all 500ms ease-in-out;
+}
+.c-wrapper .btn--primary:hover, .c-todo .btn--primary:hover {
+  transform: scale(1.1);
+  transition: all 500ms ease-in-out;
 }
 
 .c-todo {
@@ -4377,6 +4386,15 @@
   background-color: #ecf0f3;
   padding: 1rem;
 }
+.c-todo__search::before {
+  content: "\f002";
+  cursor: pointer;
+  font-family: FontAwesome;
+  left: 0;
+  position: relative;
+  padding-right: 0.1875rem;
+  transform: translateX(-3px);
+}
 .c-todo__input-group {
   display: flex;
   align-items: center;
@@ -4394,4 +4412,16 @@
   color: #666;
   padding: 10px 15px 10px 10px;
   box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+.c-todo .c-todo__input--error-border {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.c-todo__name {
+  color: #000;
+  font-family: "Sequel100Wide-45", sans-serif;
+  text-transform: capitalize;
+}
+.c-todo .fa {
+  cursor: pointer;
 }/*# sourceMappingURL=global.css.map */

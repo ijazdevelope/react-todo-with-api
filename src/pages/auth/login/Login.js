@@ -40,7 +40,7 @@ const Login = () => {
                         </div>
                         <form className="c-wrapper__form" onSubmit={handleSubmit(onSubmit)}>
                             <div className={`c-wrapper__form__field ${errors.email && 'border-danger border'}`}>
-                                <span className="fa fa-envelope-o c-wrapper__form__field__user"></span>
+                                {/* <span className="fa fa-envelope-o c-wrapper__form__field__user"></span> */}
                                 <Input
                                     type="email"
                                     autoComplete="off"
@@ -53,8 +53,8 @@ const Login = () => {
                                 />
                             </div>
                             <p className='c-wrapper__form__error'>{errors.email?.message}</p>
-                            <div className={`c-wrapper__form__field ${errors.password && 'border-danger border'}`}>
-                                <span onClick={handlerShowPassword} className={`fa ${isVisible ? 'fa-eye' : 'fa-eye-slash'} c-wrapper__form__field__user`}></span>
+                            <div className={`c-wrapper__form__field c-wrapper__form__field--eye ${errors.password && 'border-danger border'}`}>
+                                {/* <span onClick={handlerShowPassword} className={`fa ${isVisible ? 'fa-eye' : 'fa-eye-slash'} c-wrapper__form__field__user`}></span> */}
                                 <Input
                                     type={!isVisible ? "password" : "text"}
                                     autoComplete="off"

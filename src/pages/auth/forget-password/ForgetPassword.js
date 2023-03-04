@@ -33,7 +33,7 @@ const ForgetPassword = () => {
                         </div>
                         <form className="c-wrapper__form" onSubmit={handleSubmit(onSubmit)}>
                             <div className={`c-wrapper__form__field ${errors.email && 'border-danger border'}`}>
-                                <span className="fa fa-envelope-o c-wrapper__form__field__user"></span>
+                                {/* <span className="fa fa-envelope-o c-wrapper__form__field__user"></span> */}
                                 <Input
                                     type="email"
                                     autoComplete="off"

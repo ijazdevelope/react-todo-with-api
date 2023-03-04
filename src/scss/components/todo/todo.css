@@ -57,6 +57,10 @@
   padding: 10px 15px 10px 10px;
   box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
 }
+.c-todo .c-todo__input--error-border {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
 .c-todo__name {
   color: #000;
   font-family: "Sequel100Wide-45", sans-serif;

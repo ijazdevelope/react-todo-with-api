@@ -74,7 +74,7 @@ const Todo = () => {
               </div>
               <form className='c-todo__form'>
                 <div className="input-group mb-3 c-todo__input-group">
-                  <span className="fa fa-search input-group-text" id="basic-addon1">
+                  <span className="input-group-text c-todo__search" id="basic-addon1">
                   </span>
                   <input type="text" className="form-control c-todo__input" placeholder="Search For Todos...." aria-label="Username" aria-describedby="basic-addon1" />
                 </div>

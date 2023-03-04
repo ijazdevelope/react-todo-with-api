@@ -47,3 +47,13 @@
         width: 100%;
     }
 }
+
+@mixin icon-mixin($envelope: "\f003") {
+    content: $envelope;
+    cursor: pointer;
+    font-family: $icon-family;
+    left: 0;
+    position: relative;
+    padding-right: rem(3px);
+    transform: translateX(-3px);
+}
