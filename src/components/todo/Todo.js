@@ -19,10 +19,16 @@ const Todo = () => {
 
   console.log(state, 'redux state');
 
+  const fetchData = async () => {
+    const response = await Axios.get('https://jsonplaceholder.typicode.com/users')
+      // .then(response => console.log(response))
+      .catch(err => console.log(err));
+    dispatch(Action(response?.data));
+    console.log('response in Todo Comp', response?.data);
+  }
+
   useEffect(() => {
-    Axios.get('https://jsonplaceholder.typicode.com/users')
-      .then(response => console.log(response))
-      .catch(err => console.log(err))
+    fetchData();
   }, []);
 
   const { handleSubmit, register, setValue, formState: { errors } } = useForm({
@@ -68,7 +74,7 @@ const Todo = () => {
                 <Button className='btn col-12' value='add todo' type='submit'></Button>
               </form>
               <div className='row my-3 justify-content-center'>
-                <Button className='btn col-3 btn--success' value='all' type='button' onClick={ () => dispatch(Action())}></Button>
+                <Button className='btn col-3 btn--success' value='all' type='button'></Button>
                 <Button className='btn col-3 mx-3 my-3 my-md-0 btn--primary' value='done' type='button'></Button>
                 <Button className='btn col-3 btn--secondary' value='todo' type='button'></Button>
               </div>
