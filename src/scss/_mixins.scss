@@ -48,8 +48,8 @@
     }
 }
 
-@mixin icon-mixin($envelope: "\f003") {
-    content: $envelope;
+@mixin icon-mixin {
+    // content: $envelope;
     cursor: pointer;
     font-family: $icon-family;
     left: 0;
