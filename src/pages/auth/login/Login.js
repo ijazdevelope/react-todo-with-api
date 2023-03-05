@@ -7,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Link } from "react-router-dom";
 import Spinner from '../../../components/Spinner';
 import { LoginSchema } from '../schema-validation/SchemaValidation';
+import FontAwesom from '../../../components/FontAwesom';
 
 const Login = () => {
 
@@ -40,7 +41,7 @@ const Login = () => {
                         </div>
                         <form className="c-wrapper__form" onSubmit={handleSubmit(onSubmit)}>
                             <div className={`c-wrapper__form__field ${errors.email && 'border-danger border'}`}>
-                                {/* <span className="fa fa-envelope-o c-wrapper__form__field__user"></span> */}
+                                <FontAwesom className='fa fa-envelope-o' />
                                 <Input
                                     type="email"
                                     autoComplete="off"
@@ -54,7 +55,7 @@ const Login = () => {
                             </div>
                             <p className='c-wrapper__form__error'>{errors.email?.message}</p>
                             <div className={`c-wrapper__form__field c-wrapper__form__field--eye ${errors.password && 'border-danger border'}`}>
-                                {/* <span onClick={handlerShowPassword} className={`fa ${isVisible ? 'fa-eye' : 'fa-eye-slash'} c-wrapper__form__field__user`}></span> */}
+                                <FontAwesom className={` ${!isVisible ? 'fa-eye-slash' : 'fa-eye'} `} onClick={handlerShowPassword} />
                                 <Input
                                     type={!isVisible ? "password" : "text"}
                                     autoComplete="off"
@@ -74,7 +75,7 @@ const Login = () => {
                                         height="50"
                                         width="50"
                                         ariaLabel="blocks-loading"
-                                        wrapperStyle={{width: '10rem'}}
+                                        wrapperStyle={{ width: '10rem' }}
                                         wrapperClass="dna-wrapper"
                                         colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
                                         size='xl'

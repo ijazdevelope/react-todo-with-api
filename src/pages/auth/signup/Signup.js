@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Link } from 'react-router-dom';
 import { SignupSchema } from '../schema-validation/SchemaValidation';
+import FontAwesom from '../../../components/FontAwesom';
 
 const Signup = () => {
   const [isVisible, setVisible] = useState(false);
@@ -38,7 +39,7 @@ const Signup = () => {
               <div className='d-md-flex justify-content-between'>
                 <div>
                   <div className={`c-wrapper__form__field c-wrapper__form__field--user ${errors.fname && 'border-danger border'}`}>
-                    {/* <span className="fa fa-user c-wrapper__form__field__user"></span> */}
+                    <FontAwesom className="fa-user" />
                     <Input
                       type="text"
                       autoComplete="off"
@@ -54,7 +55,7 @@ const Signup = () => {
                 </div>
                 <div>
                   <div className={`c-wrapper__form__field c-wrapper__form__field--user ${errors.lname && 'border-danger border'}`}>
-                    {/* <span className="fa fa-user c-wrapper__form__field__user"></span> */}
+                    <FontAwesom className="fa-user" />
                     <Input
                       type="text"
                       autoComplete="off"
@@ -70,7 +71,7 @@ const Signup = () => {
                 </div>
               </div>
               <div className={`c-wrapper__form__field ${errors.email && 'border-danger border'}`}>
-                {/* <span className="fa fa-envelope-o c-wrapper__form__field__user"></span> */}
+                <FontAwesom className="fa-envelope-o" />
                 <Input
                   type="email"
                   autoComplete="off"
@@ -86,7 +87,7 @@ const Signup = () => {
               <div className='d-md-flex justify-content-between'>
                 <div>
                   <div className={`c-wrapper__form__field c-wrapper__form__field--eye ${errors.password && 'border-danger border'}`}>
-                    {/* <span onClick={handlerShowPassword} className={`fa ${isVisible ? 'fa-eye' : 'fa-eye-slash'} c-wrapper__form__field__user`}></span> */}
+                    <FontAwesom className={` ${!isVisible ? 'fa-eye-slash' : 'fa-eye'} `} onClick={handlerShowPassword} />
                     <Input
                       type={!isVisible ? "password" : "text"}
                       autoComplete="off"
@@ -102,7 +103,7 @@ const Signup = () => {
                 </div>
                 <div>
                   <div className={`c-wrapper__form__field c-wrapper__form__field--eye ${errors.cpassword && 'border-danger border'}`}>
-                    {/* <span onClick={handlerShowPassword} className={`fa ${isVisible ? 'fa-eye' : 'fa-eye-slash'} c-wrapper__form__field__user`}></span> */}
+                    <FontAwesom className={` ${!isVisible ? 'fa-eye-slash' : 'fa-eye'} `} onClick={handlerShowPassword} />
                     <Input
                       type={!isVisible ? "password" : "text"}
                       autoComplete="off"
@@ -118,7 +119,7 @@ const Signup = () => {
                 </div>
               </div>
               <Button className="btn c-wrapper__form__button" value='sign up'></Button>
-                <p className='c-wrapper__form__account'>Already have an account? <Link to='/' className='c-wrapper__form__account__link'>Login</Link></p>
+              <p className='c-wrapper__form__account'>Already have an account? <Link to='/' className='c-wrapper__form__account__link'>Login</Link></p>
             </form>
           </div>
         </div>

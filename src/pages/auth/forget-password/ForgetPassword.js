@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { ForgetPasswordSchema } from '../schema-validation/SchemaValidation';
+import FontAwesom from '../../../components/FontAwesom';
 
 const ForgetPassword = () => {
 
@@ -15,8 +16,8 @@ const ForgetPassword = () => {
     });
     const onSubmit = (data) => console.log(data);
 
-  return (
-    <div className='container'>
+    return (
+        <div className='container'>
             <div className="wrapper c-wrapper">
                 <div className="row g-0">
                     <div className="col-md-5 col-lg-6 d-none d-md-block">
@@ -33,7 +34,7 @@ const ForgetPassword = () => {
                         </div>
                         <form className="c-wrapper__form" onSubmit={handleSubmit(onSubmit)}>
                             <div className={`c-wrapper__form__field ${errors.email && 'border-danger border'}`}>
-                                {/* <span className="fa fa-envelope-o c-wrapper__form__field__user"></span> */}
+                                <FontAwesom className="fa-envelope-o" />
                                 <Input
                                     type="email"
                                     autoComplete="off"
@@ -53,7 +54,7 @@ const ForgetPassword = () => {
                 </div>
             </div>
         </div>
-  )
+    )
 }
 
 export default ForgetPassword
