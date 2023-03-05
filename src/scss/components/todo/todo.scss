@@ -51,12 +51,6 @@ $ns: c-todo;
         padding: rem(16px);
     }
 
-    &__search {
-        &::before {
-            @include icon-mixin($search-icon);
-        }
-    }
-
     &__input-group {
         display: flex;
         align-items: center;
