@@ -74,32 +74,12 @@ $ns: c-wrapper;
             box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px $white;
             position: relative;
 
-            &::before {
-                @include icon-mixin($envelope);
+            &__user {
+                padding-right: rem(10px);
+                width: rem(20px);
+                height: rem(20px);
+                padding-top: rem(3px);
             }
-
-            &--eye {
-                &::before {
-                    @include icon-mixin($eye-icon);
-                }
-            }
-
-            &--user {
-                &::before {
-                    @include icon-mixin($user-icon);
-                }
-            }
-
-            // &::after {
-            //     @include icon-mixin($eye-icon);
-            // }
-
-            // &__user {
-            //     padding-right: rem(8px);
-            //     width: rem(20px);
-            //     height: rem(20px);
-            //     padding-top: rem(3px);
-            // }
 
             &__input {
                 width: 100%;
