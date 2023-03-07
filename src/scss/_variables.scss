@@ -13,12 +13,19 @@ $primary: #03A9F4;
 $red: #FF0000;
 
 $font-size-base-px: 16px;
+$iron: #cbced1;
+$dove-gray: #666;
+$scorpion: #5f5f5f;
+$edward: #a7aaa7;
+$mine-shaft: #333333;
+$cerulean: #039BE5;
+$silver-chalice: #b1b1b1;
 
 // button colors
 $primary1: #e8f0fe;
 $vital-green: #198754;
 $secondary-btn-bg: #6c757d;
-$button-shadow: 13px 13px 20px #cbced1, -13px -13px 20px $white;
+$button-shadow: 13px 13px 20px $iron, -13px -13px 20px $white;
 
 // add transitions
 $speed1-s: 1s;
