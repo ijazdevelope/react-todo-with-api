@@ -1,14 +1,15 @@
 import { INCREMENT } from "../constants/Constants";
 
 const InitialState = {
-    state: []
+    list: []
 }
 
 export const Reducers = (state = InitialState, { payload, type }) => {
     // const { type } = payload
+    console.log(payload)
 
     switch (type) {
-        case INCREMENT: return { ...state, state: payload }
+        case INCREMENT: return { ...state, list: payload }
         default: return state;
     }
 }
