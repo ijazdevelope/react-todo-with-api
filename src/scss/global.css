@@ -4373,6 +4373,15 @@
   text-decoration: none;
 }
 .c-todo__title {
+  color: #fff;
+  font-family: "SofiaPro", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  padding: 0.625rem 0;
+}
+.c-todo__not-found {
+  color: #fff;
   font-family: "SofiaPro", sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -4385,15 +4394,6 @@
 .c-todo__form {
   background-color: #ecf0f3;
   padding: 1rem;
-}
-.c-todo__search::before {
-  content: "\f002";
-  cursor: pointer;
-  font-family: FontAwesome;
-  left: 0;
-  position: relative;
-  padding-right: 0.1875rem;
-  transform: translateX(-3px);
 }
 .c-todo__input-group {
   display: flex;

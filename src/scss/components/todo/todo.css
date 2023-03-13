@@ -25,13 +25,6 @@
   margin: 0;
   text-decoration: none;
 }
-.c-todo__title {
-  font-family: "SofiaPro", sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 3px;
-  padding: 0.625rem 0;
-}
 .c-todo__todo-img {
   width: 2.1875rem;
 }
