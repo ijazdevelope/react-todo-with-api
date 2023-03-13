@@ -94,8 +94,13 @@ $ns: c-wrapper;
             }
 
             &__error {
-                right: 13px;
                 cursor: pointer;
+                color: $red;
+                position: absolute;
+                right: 13px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 2;
             }
         }
 
