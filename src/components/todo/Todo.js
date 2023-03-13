@@ -10,21 +10,22 @@ import { TodoSchema } from '../../pages/auth/schema-validation/SchemaValidation'
 import { Axios } from '../../config/Interceptor';
 import { useDispatch, useSelector } from 'react-redux'
 import { Action } from '../../redux/actions/Actions';
+import TodoNotFoundImg from '../../assets/images/error-404-not-found.png';
 
 
 const Todo = () => {
 
-  const state = useSelector(state => state?.reducer?.state);
+  const { list } = useSelector(state => state?.reducer);
   const dispatch = useDispatch();
 
-  console.log(state, 'redux state');
+  console.log(list, 'redux state');
 
-  const fetchData = async () => {
-    const response = await Axios.get('https://jsonplaceholder.typicode.com/users')
-      // .then(response => console.log(response))
+  const fetchData = () => {
+    Axios.get('https://jsonplaceholder.typicode.com/users')
+      .then(response => dispatch(Action(response?.data)))
       .catch(err => console.log(err));
-    dispatch(Action(response?.data));
-    console.log('response in Todo Comp', response?.data);
+    // dispatch(Action(response?.data));
+    // console.log('response in Todo Comp', response.data);
   }
 
   useEffect(() => {
@@ -53,7 +54,7 @@ const Todo = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-7 m-auto c-todo__add">
-              <h2 className='c-todo__title'>todo title {state} </h2>
+              <h2 className='c-todo__title'>todo title </h2>
               <form className='c-todo__form' onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-group mb-3 c-todo__input-group">
                   <span className="input-group-text" id="basic-addon1">
@@ -80,20 +81,29 @@ const Todo = () => {
               </div>
               <form className='c-todo__form'>
                 <div className="input-group mb-3 c-todo__input-group">
-                  <span className="input-group-text c-todo__search" id="basic-addon1">
+                  <span className="fa fa-search input-group-text c-todo__search" id="basic-addon1">
                   </span>
                   <input type="text" className="form-control c-todo__input" placeholder="Search For Todos...." aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
               </form>
 
-              <div className="col-12 d-flex justify-content-between my-3 c-todo__form">
-                <span className='c-todo__name'>todo name</span>
-                <div className='d-flex align-items-center'>
-                  <input type='checkbox' />
-                  <span className='fa fa-pencil mx-3 text-success'></span>
-                  <span className='fa fa-trash-o text-danger'></span>
+              {list?.length > 0 ? (
+                list?.map(data => (
+                  <div className="col-12 d-flex justify-content-between my-3 c-todo__form">
+                    <span className='c-todo__name'> {data?.name} </span>
+                    <div className='d-flex align-items-center'>
+                      <input type='checkbox' />
+                      <span className='fa fa-pencil mx-3 text-success'></span>
+                      <span className='fa fa-trash-o text-danger'></span>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div>
+                  <h3 className='c-todo__not-found'>todo not found</h3>
+                  <img src={TodoNotFoundImg} className='w-100' alt='todo-not-found' />
                 </div>
-              </div>
+              )}
 
             </div>
           </div>
