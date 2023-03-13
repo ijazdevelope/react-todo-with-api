@@ -6,7 +6,6 @@ const InitialState = {
 
 export const Reducers = (state = InitialState, { payload, type }) => {
     // const { type } = payload
-    console.log(payload)
 
     switch (type) {
         case INCREMENT: return { ...state, list: payload }
