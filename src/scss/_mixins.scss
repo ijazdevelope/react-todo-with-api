@@ -57,3 +57,12 @@
     padding-right: rem(3px);
     transform: translateX(-3px);
 }
+
+@mixin todo-title($color: $white) {
+    color: $color;
+    font-family: $sofia-fonts;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    padding: rem(10px) 0;
+}

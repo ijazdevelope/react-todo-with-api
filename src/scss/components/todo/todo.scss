@@ -35,11 +35,11 @@ $ns: c-todo;
     }
 
     &__title {
-        font-family: $sofia-fonts;
-        text-transform: uppercase;
-        text-align: center;
-        letter-spacing: 3px;
-        padding: rem(10px) 0;
+        @include todo-title($white);
+    }
+
+    &__not-found {
+        @include todo-title($white);
     }
 
     &__todo-img {
@@ -47,7 +47,7 @@ $ns: c-todo;
     }
 
     &__form {
-        background-color: #ecf0f3;
+        background-color: $bright-gray;
         padding: rem(16px);
     }
 
@@ -55,7 +55,7 @@ $ns: c-todo;
         display: flex;
         align-items: center;
         border-radius: 20px;
-        box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+        box-shadow: inset 8px 8px 8px $iron, inset -8px -8px 8px $white;
         position: relative;
     }
 
@@ -67,9 +67,9 @@ $ns: c-todo;
             outline: none;
             background: none;
             font-size: 1.2rem;
-            color: #666;
+            color: $dove-gray;
             padding: 10px 15px 10px 10px;
-            box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+            box-shadow: inset 8px 8px 8px $iron, inset -8px -8px 8px $white;
 
             &--error-border {
                 border-top-right-radius: 20px;
