@@ -9,12 +9,27 @@ import Input from '../Input';
 import { TodoSchema } from '../../pages/auth/schema-validation/SchemaValidation';
 import { Axios } from '../../config/Interceptor';
 import { useDispatch, useSelector } from 'react-redux'
-import { Action } from '../../redux/actions/Actions';
+import { Action, addTodo } from '../../redux/actions/Actions';
+import { actionTypes } from '../../redux/constants/Constants';
 import TodoNotFoundImg from '../../assets/images/error-404-not-found.png';
+
 
 
 const Todo = () => {
 
+  const state = useSelector(state => state?.reducer?.list);
+  const dispatch = useDispatch();
+
+  console.log(state, 'redux state onload');
+
+  // const fetchData = () => {
+  //   const response = Axios.get('https://jsonplaceholder.typicode.com/users')
+  //     .then(response => console.log('response', response.data))
+  //     .catch(err => console.log(err));
+  //   dispatch(Action(response?.data));
+  //   console.log('response in Todo Comp', response);
+  // }
+  
   const { list } = useSelector(state => state?.reducer);
   const dispatch = useDispatch();
 
@@ -29,13 +44,16 @@ const Todo = () => {
   }
 
   useEffect(() => {
-    fetchData();
+    // fetchData();
   }, []);
 
   const { handleSubmit, register, setValue, formState: { errors } } = useForm({
     resolver: yupResolver(TodoSchema),
   });
-  const onSubmit = (data) => console.log(errors);
+
+  const onSubmit = (data) => {
+    dispatch(addTodo({ todo_name: data?.todo_name }));
+  };
 
   return (
     <div className="c-todo">
@@ -83,7 +101,14 @@ const Todo = () => {
                 <div className="input-group mb-3 c-todo__input-group">
                   <span className="fa fa-search input-group-text c-todo__search" id="basic-addon1">
                   </span>
-                  <input type="text" className="form-control c-todo__input" placeholder="Search For Todos...." aria-label="Username" aria-describedby="basic-addon1" />
+                  <Input
+                    name="todo_name"
+                    type="text"
+                    className="form-control c-todo__input"
+                    placeholder="Search For Todos...."
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
                 </div>
               </form>
 

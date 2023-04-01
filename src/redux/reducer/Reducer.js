@@ -1,14 +1,16 @@
-import { INCREMENT } from "../constants/Constants";
+import { actionTypes, INCREMENT } from "../constants/Constants";
 
 const InitialState = {
-    list: []
+    list: localStorage.getItem(JSON.stringify('todo')) || []
 }
 
-export const Reducers = (state = InitialState, { payload, type }) => {
+export const Reducers = (list = InitialState, { payload, type }) => {
     // const { type } = payload
+    console.log(payload, type, 'payload in reducer');
 
     switch (type) {
-        case INCREMENT: return { ...state, list: payload }
-        default: return state;
+        case INCREMENT: return { ...list, list: payload };
+        case actionTypes.ADD_TODO: return [...list?.list, { payload }];
+        default: return list;
     }
 }
