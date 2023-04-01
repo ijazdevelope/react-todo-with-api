@@ -35,11 +35,11 @@ $ns: c-todo;
     }
 
     &__title {
-        font-family: $sofia-fonts;
-        text-transform: uppercase;
-        text-align: center;
-        letter-spacing: 3px;
-        padding: rem(10px) 0;
+        @include todo-title($white);
+    }
+
+    &__not-found {
+        @include todo-title($white);
     }
 
     &__todo-img {

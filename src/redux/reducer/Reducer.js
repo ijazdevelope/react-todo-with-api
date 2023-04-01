@@ -11,7 +11,6 @@ export const Reducers = (list = InitialState, { payload, type }) => {
     switch (type) {
         case INCREMENT: return { ...list, list: payload };
         case actionTypes.ADD_TODO: return [...list?.list, { payload }];
-        // case actionTypes.ADD_TODO: return { list: [...list, payload] };
         default: return list;
     }
 }
