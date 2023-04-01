@@ -87,7 +87,6 @@ const Login = () => {
                                 <Link className='c-wrapper__forgot-password' to="/forget-password">Forget password?</Link>
                                 <span className='c-wrapper__or'>or</span>
                                 <Link className='c-wrapper__signup' to="/signup">Sign up</Link>
-                                <Link className='c-wrapper__signup' to="/todo"> Todo</Link>
                             </div>
                         </form>
                     </div>
