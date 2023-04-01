@@ -29,9 +29,8 @@ const Todo = () => {
   //   dispatch(Action(response?.data));
   //   console.log('response in Todo Comp', response);
   // }
-  
+
   const { list } = useSelector(state => state?.reducer);
-  const dispatch = useDispatch();
 
   console.log(list, 'redux state');
 

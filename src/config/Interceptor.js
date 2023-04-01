@@ -22,13 +22,13 @@ axios.interceptors.response.use(function (response) {
   return Promise.reject(error);
 });
 
-    // Do something before request is sent
-    // console.log('interceptor', config);
-    return config;
-  }, function (error) {
-    // Do something with request error
-    return Promise.reject(error);
-  });
+// Do something before request is sent
+// console.log('interceptor', config);
+// return config;
+//   }, function (error) {
+//   // Do something with request error
+//   return Promise.reject(error);
+// });
 
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
